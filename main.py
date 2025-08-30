@@ -3,6 +3,7 @@ import time
 import re
 from utils import CONSOLE_FILE, write_command
 from games import blackjack, coinflip
+from games.CaseGame import case_game
 
 def listen(logFile):
     logFile.seek(0, os.SEEK_END)
@@ -36,10 +37,14 @@ def parse(line):
 
     match command:
         case "!blackjack":
+            time.sleep(0.5)
             write_command(f"say {username} {command} {args}")
         case "!flip":
+            time.sleep(0.5)
             coinflip.flip(username)
-
+        case "!case":
+            time.sleep(0.5)
+            case_game.start(username, args)
 
 
 if __name__ == '__main__':
