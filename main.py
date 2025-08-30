@@ -25,7 +25,11 @@ def listen(logFile):
         last_size = logFile.tell()
 
 def parse(line):
-    regex = re.search(r"\[(?:ALL|(?:C)?(?:T)?)\]\s+(.*)‎(?:﹫\w+)?\s*(?:\[DEAD\])?:(?:\s)?(\S+)?\s(\S+)?", line, flags=re.UNICODE)
+    regex = re.search(
+    r"\[(?:ALL|(?:C)?(?:T)?)\]\s+(.*)‎(?:﹫\w+)?\s*(?:\[DEAD\])?:(?:\s)?(\S+)?\s(.+)?",
+    line,
+    flags=re.UNICODE
+)
     if regex:
         username = regex.group(1)
         command = regex.group(2)

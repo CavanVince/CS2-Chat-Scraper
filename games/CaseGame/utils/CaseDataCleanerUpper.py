@@ -44,6 +44,7 @@ def normalize(path_in="games/CaseGame/case_data.json",
             "Restricted",
             "Classified",
             "Covert",
+            "Contraband"
         }
         if rarity_name in KNOWN and item.get("rarity") != rarity_name:
             item["rarity"] = rarity_name
