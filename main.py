@@ -1,14 +1,8 @@
+import os
 import time
 import re
-import os
-import pyautogui
-from dotenv import load_dotenv
-from games import *
-
-load_dotenv()
-
-CONSOLE_FILE = os.getenv('CONSOLE_FILE')
-EXEC_FILE = os.getenv('EXEC_FILE')
+from utils import CONSOLE_FILE, write_command
+from games import blackjack, coinflip
 
 def listen(logFile):
     logFile.seek(0, os.SEEK_END)
@@ -42,21 +36,10 @@ def parse(line):
 
     match command:
         case "!blackjack":
-            print(username, command, args)
             write_command(f"say {username} {command} {args}")
-            press_key()
         case "!flip":
-            ...
+            coinflip.flip(username)
 
-
-
-def write_command(command):
-    with open(EXEC_FILE, 'w', encoding='utf-8') as f:
-        f.write(command)
-
-def press_key():
-    time.sleep(0.2)
-    pyautogui.press('=')
 
 
 if __name__ == '__main__':
