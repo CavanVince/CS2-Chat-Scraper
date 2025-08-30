@@ -1,0 +1,1 @@
+# CS2-Chat-Scraper
