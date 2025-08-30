@@ -18,6 +18,13 @@
             "request": "launch",
             "program": "main.py",
             "console": "integratedTerminal"
+        },
+        {
+            "name": "Test CS Console",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/tests/cli.py",
+            "console": "integratedTerminal"
         }
     ]
 }
