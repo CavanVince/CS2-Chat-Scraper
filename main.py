@@ -1,9 +1,12 @@
 import os
 import time
 import re
+import requests
+import json
 from utils import CONSOLE_FILE, write_command
 from games import blackjack, coinflip
 from games.CaseGame import case_game
+
 
 def listen(logFile):
     logFile.seek(0, os.SEEK_END)
@@ -24,12 +27,13 @@ def listen(logFile):
         parse(line)
         last_size = logFile.tell()
 
+
 def parse(line):
     regex = re.search(
-    r"\[(?:ALL|(?:C)?(?:T)?)\]\s+(.*)‎(?:﹫\w+)?\s*(?:\[DEAD\])?:(?:\s)?(\S+)?\s(.+)?",
-    line,
-    flags=re.UNICODE
-)
+        r"\[(?:ALL|(?:C)?(?:T)?)\]\s+(.*)‎(?:﹫\w+)?\s*(?:\[DEAD\])?:(?:\s)?(\S+)?\s(.+)?",
+        line,
+        flags=re.UNICODE,
+    )
     if regex:
         username = regex.group(1)
         command = regex.group(2)
@@ -51,8 +55,21 @@ def parse(line):
             case_game.start(username, args)
 
 
-if __name__ == '__main__':
-    log_file = open(CONSOLE_FILE,"r", encoding="utf-8")
+if __name__ == "__main__":
+    log_file = open(CONSOLE_FILE, "r", encoding="utf-8")
+    db = "https://csfloat.com/api/v1/listings/price-list"
+    try:
+        response = requests.get(db)
+        response.raise_for_status()
+
+        prices = response.json()
+        with open("skin_prices.json", "w") as f:
+            json.dump(prices, f, indent=4)
+
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching data from API: {e}")
+    except json.JSONDecodeError as e:
+        print(f"Error decoding JSON: {e}")
     try:
         while True:
             listen(log_file)
