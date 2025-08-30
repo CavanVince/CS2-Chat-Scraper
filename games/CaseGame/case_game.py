@@ -82,13 +82,13 @@ def open_case(context: Context):
 
 def case_guess(case : str):
     cases = get_case_list()
-    closest = difflib.get_close_matches(case, cases.keys(), n=1, cutoff=0.5)
+    closest = difflib.get_close_matches(case, cases.keys(), n=1, cutoff=0.75)
     if not closest:
         alias_to_exact = {}
         for exact, meta in cases.items():
             alias = meta.get("alias", exact)
             alias_to_exact[alias] = exact
-        closest = difflib.get_close_matches(case, alias_to_exact.keys(), n=1, cutoff=0.5)
+        closest = difflib.get_close_matches(case, alias_to_exact.keys(), n=1, cutoff=0.75)
         return alias_to_exact[closest[0]] if closest else None
     return closest[0] if closest else None
 
