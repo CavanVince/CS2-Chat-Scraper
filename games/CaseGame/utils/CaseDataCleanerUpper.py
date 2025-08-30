@@ -106,8 +106,21 @@ def clean_cases(path_in="games/CaseGame/case_data.json",
 
     with open(path_out, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
-    
+
+def fix_names():
+    data = parse_json("games/CaseGame/case_data.json")
+    for case in data:
+        case.pop("input", None)
+        if "Souvenir Package" in case["name"]:
+            case["alias"] = case["name"].replace("Souvenir Package", "").strip()
+        if "Case" in case["name"]:
+            case["alias"] = case["name"].replace("Case", "").strip()
+            if "Operation" in case["name"]:
+                case["alias"] = case["alias"].replace("Operation", "").strip()
+        if "Weapon" in case["name"]:
+            case["alias"] = case["name"].replace("Weapon", "").strip()
+    with open("games/CaseGame/case_data_temp.json", "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=4)
 
 if __name__ == "__main__":
-    normalize()
-    clean_cases()
+    fix_names()

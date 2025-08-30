@@ -463,7 +463,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Weapon Case 1"
     },
     {
         "name": "eSports 2013 Case",
@@ -929,7 +930,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "eSports 2013"
     },
     {
         "name": "Operation Bravo Case",
@@ -1431,7 +1433,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Bravo"
     },
     {
         "name": "CS:GO Weapon Case 2",
@@ -1915,7 +1918,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Weapon Case 2"
     },
     {
         "name": "eSports 2013 Winter Case",
@@ -2399,7 +2403,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "eSports 2013 Winter"
     },
     {
         "name": "DreamHack 2013 Souvenir Package",
@@ -2968,7 +2973,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "DreamHack 2013"
     },
     {
         "name": "Winter Offensive Weapon Case",
@@ -3458,7 +3464,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Winter Offensive"
     },
     {
         "name": "CS:GO Weapon Case 3",
@@ -3942,7 +3949,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Weapon Case 3"
     },
     {
         "name": "Operation Phoenix Weapon Case",
@@ -4432,7 +4440,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Phoenix"
     },
     {
         "name": "EMS One 2014 Souvenir Package",
@@ -4995,7 +5004,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "EMS One 2014"
     },
     {
         "name": "Huntsman Weapon Case",
@@ -5187,7 +5197,8 @@
                 "text": "Some skins (M4A4 Howl, USP-S Orion, MAC-10 Curse, CZ75-Auto Poison Dart, Dual Berettas Retribution and P90 Desert Warfare) were removed and replaced for others due to art theft."
             }
         ],
-        "cost": 0
+        "cost": 0,
+        "alias": "Huntsman"
     },
     {
         "name": "Operation Breakout Weapon Case",
@@ -5367,7 +5378,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Breakout"
     },
     {
         "name": "eSports 2014 Summer Case",
@@ -5881,7 +5893,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "eSports 2014 Summer"
     },
     {
         "name": "ESL One Cologne 2014 Dust II Souvenir Package",
@@ -5994,7 +6007,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "ESL One Cologne 2014 Dust II"
     },
     {
         "name": "ESL One Cologne 2014 Inferno Souvenir Package",
@@ -6043,7 +6057,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "ESL One Cologne 2014 Inferno"
     },
     {
         "name": "ESL One Cologne 2014 Mirage Souvenir Package",
@@ -6148,7 +6163,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "ESL One Cologne 2014 Mirage"
     },
     {
         "name": "ESL One Cologne 2014 Nuke Souvenir Package",
@@ -6217,7 +6233,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "ESL One Cologne 2014 Nuke"
     },
     {
         "name": "ESL One Cologne 2014 Cache Souvenir Package",
@@ -6308,7 +6325,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "ESL One Cologne 2014 Cache"
     },
     {
         "name": "ESL One Cologne 2014 Cobblestone Souvenir Package",
@@ -6417,7 +6435,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "ESL One Cologne 2014 Cobblestone"
     },
     {
         "name": "ESL One Cologne 2014 Overpass Souvenir Package",
@@ -6524,7 +6543,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "ESL One Cologne 2014 Overpass"
     },
     {
         "name": "Operation Vanguard Weapon Case",
@@ -7020,7 +7040,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Vanguard"
     },
     {
         "name": "DreamHack 2014 Dust II Souvenir Package",
@@ -7133,7 +7154,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "DreamHack 2014 Dust II"
     },
     {
         "name": "DreamHack 2014 Inferno Souvenir Package",
@@ -7182,7 +7204,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "DreamHack 2014 Inferno"
     },
     {
         "name": "DreamHack 2014 Mirage Souvenir Package",
@@ -7287,7 +7310,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "DreamHack 2014 Mirage"
     },
     {
         "name": "DreamHack 2014 Nuke Souvenir Package",
@@ -7356,7 +7380,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "DreamHack 2014 Nuke"
     },
     {
         "name": "DreamHack 2014 Cache Souvenir Package",
@@ -7447,7 +7472,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "DreamHack 2014 Cache"
     },
     {
         "name": "DreamHack 2014 Cobblestone Souvenir Package",
@@ -7556,7 +7582,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "DreamHack 2014 Cobblestone"
     },
     {
         "name": "DreamHack 2014 Overpass Souvenir Package",
@@ -7663,7 +7690,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "DreamHack 2014 Overpass"
     },
     {
         "name": "Chroma Case",
@@ -8159,7 +8187,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Chroma"
     },
     {
         "name": "ESL One Katowice 2015 Dust II Souvenir Package",
@@ -8272,7 +8301,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "ESL One Katowice 2015 Dust II"
     },
     {
         "name": "ESL One Katowice 2015 Inferno Souvenir Package",
@@ -8321,7 +8351,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "ESL One Katowice 2015 Inferno"
     },
     {
         "name": "ESL One Katowice 2015 Mirage Souvenir Package",
@@ -8426,7 +8457,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "ESL One Katowice 2015 Mirage"
     },
     {
         "name": "ESL One Katowice 2015 Nuke Souvenir Package",
@@ -8495,7 +8527,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "ESL One Katowice 2015 Nuke"
     },
     {
         "name": "ESL One Katowice 2015 Cache Souvenir Package",
@@ -8586,7 +8619,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "ESL One Katowice 2015 Cache"
     },
     {
         "name": "ESL One Katowice 2015 Cobblestone Souvenir Package",
@@ -8695,7 +8729,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "ESL One Katowice 2015 Cobblestone"
     },
     {
         "name": "ESL One Katowice 2015 Overpass Souvenir Package",
@@ -8802,7 +8837,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "ESL One Katowice 2015 Overpass"
     },
     {
         "name": "Chroma 2 Case",
@@ -9304,7 +9340,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Chroma 2"
     },
     {
         "name": "Falchion Case",
@@ -9496,7 +9533,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Falchion"
     },
     {
         "name": "ESL One Cologne 2015 Dust II Souvenir Package",
@@ -9609,7 +9647,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "ESL One Cologne 2015 Dust II"
     },
     {
         "name": "ESL One Cologne 2015 Mirage Souvenir Package",
@@ -9714,7 +9753,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "ESL One Cologne 2015 Mirage"
     },
     {
         "name": "ESL One Cologne 2015 Inferno Souvenir Package",
@@ -9763,7 +9803,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "ESL One Cologne 2015 Inferno"
     },
     {
         "name": "ESL One Cologne 2015 Cobblestone Souvenir Package",
@@ -9872,7 +9913,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "ESL One Cologne 2015 Cobblestone"
     },
     {
         "name": "ESL One Cologne 2015 Overpass Souvenir Package",
@@ -9979,7 +10021,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "ESL One Cologne 2015 Overpass"
     },
     {
         "name": "ESL One Cologne 2015 Cache Souvenir Package",
@@ -10070,7 +10113,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "ESL One Cologne 2015 Cache"
     },
     {
         "name": "ESL One Cologne 2015 Train Souvenir Package",
@@ -10175,7 +10219,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "ESL One Cologne 2015 Train"
     },
     {
         "name": "Shadow Case",
@@ -10367,7 +10412,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Shadow"
     },
     {
         "name": "DreamHack Cluj-Napoca 2015 Dust II Souvenir Package",
@@ -10480,7 +10526,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "DreamHack Cluj-Napoca 2015 Dust II"
     },
     {
         "name": "DreamHack Cluj-Napoca 2015 Mirage Souvenir Package",
@@ -10585,7 +10632,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "DreamHack Cluj-Napoca 2015 Mirage"
     },
     {
         "name": "DreamHack Cluj-Napoca 2015 Inferno Souvenir Package",
@@ -10634,7 +10682,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "DreamHack Cluj-Napoca 2015 Inferno"
     },
     {
         "name": "DreamHack Cluj-Napoca 2015 Cobblestone Souvenir Package",
@@ -10743,7 +10792,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "DreamHack Cluj-Napoca 2015 Cobblestone"
     },
     {
         "name": "DreamHack Cluj-Napoca 2015 Overpass Souvenir Package",
@@ -10850,7 +10900,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "DreamHack Cluj-Napoca 2015 Overpass"
     },
     {
         "name": "DreamHack Cluj-Napoca 2015 Cache Souvenir Package",
@@ -10941,7 +10992,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "DreamHack Cluj-Napoca 2015 Cache"
     },
     {
         "name": "DreamHack Cluj-Napoca 2015 Train Souvenir Package",
@@ -11046,7 +11098,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "DreamHack Cluj-Napoca 2015 Train"
     },
     {
         "name": "Revolver Case",
@@ -11560,7 +11613,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Revolver"
     },
     {
         "name": "Operation Wildfire Case",
@@ -11752,7 +11806,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Wildfire"
     },
     {
         "name": "MLG Columbus 2016 Dust II Souvenir Package",
@@ -11865,7 +11920,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "MLG Columbus 2016 Dust II"
     },
     {
         "name": "MLG Columbus 2016 Mirage Souvenir Package",
@@ -11970,7 +12026,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "MLG Columbus 2016 Mirage"
     },
     {
         "name": "MLG Columbus 2016 Inferno Souvenir Package",
@@ -12019,7 +12076,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "MLG Columbus 2016 Inferno"
     },
     {
         "name": "MLG Columbus 2016 Cobblestone Souvenir Package",
@@ -12128,7 +12186,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "MLG Columbus 2016 Cobblestone"
     },
     {
         "name": "MLG Columbus 2016 Overpass Souvenir Package",
@@ -12235,7 +12294,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "MLG Columbus 2016 Overpass"
     },
     {
         "name": "MLG Columbus 2016 Cache Souvenir Package",
@@ -12326,7 +12386,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "MLG Columbus 2016 Cache"
     },
     {
         "name": "MLG Columbus 2016 Train Souvenir Package",
@@ -12431,7 +12492,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "MLG Columbus 2016 Train"
     },
     {
         "name": "MLG Columbus 2016 Nuke Souvenir Package",
@@ -12500,7 +12562,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "MLG Columbus 2016 Nuke"
     },
     {
         "name": "Chroma 3 Case",
@@ -13014,7 +13077,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Chroma 3"
     },
     {
         "name": "Gamma Case",
@@ -13458,7 +13522,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Gamma"
     },
     {
         "name": "Cologne 2016 Dust II Souvenir Package",
@@ -13571,7 +13636,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Cologne 2016 Dust II"
     },
     {
         "name": "Cologne 2016 Mirage Souvenir Package",
@@ -13676,7 +13742,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Cologne 2016 Mirage"
     },
     {
         "name": "Cologne 2016 Cobblestone Souvenir Package",
@@ -13785,7 +13852,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Cologne 2016 Cobblestone"
     },
     {
         "name": "Cologne 2016 Overpass Souvenir Package",
@@ -13892,7 +13960,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Cologne 2016 Overpass"
     },
     {
         "name": "Cologne 2016 Cache Souvenir Package",
@@ -13983,7 +14052,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Cologne 2016 Cache"
     },
     {
         "name": "Cologne 2016 Train Souvenir Package",
@@ -14088,7 +14158,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Cologne 2016 Train"
     },
     {
         "name": "Cologne 2016 Nuke Souvenir Package",
@@ -14157,7 +14228,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Cologne 2016 Nuke"
     },
     {
         "name": "Gamma 2 Case",
@@ -14601,7 +14673,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Gamma 2"
     },
     {
         "name": "Glove Case",
@@ -14864,7 +14937,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Glove"
     },
     {
         "name": "Atlanta 2017 Dust II Souvenir Package",
@@ -14977,7 +15051,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Atlanta 2017 Dust II"
     },
     {
         "name": "Atlanta 2017 Mirage Souvenir Package",
@@ -15082,7 +15157,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Atlanta 2017 Mirage"
     },
     {
         "name": "Atlanta 2017 Cobblestone Souvenir Package",
@@ -15191,7 +15267,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Atlanta 2017 Cobblestone"
     },
     {
         "name": "Atlanta 2017 Overpass Souvenir Package",
@@ -15298,7 +15375,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Atlanta 2017 Overpass"
     },
     {
         "name": "Atlanta 2017 Cache Souvenir Package",
@@ -15389,7 +15467,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Atlanta 2017 Cache"
     },
     {
         "name": "Atlanta 2017 Train Souvenir Package",
@@ -15494,7 +15573,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Atlanta 2017 Train"
     },
     {
         "name": "Atlanta 2017 Nuke Souvenir Package",
@@ -15563,7 +15643,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Atlanta 2017 Nuke"
     },
     {
         "name": "Spectrum Case",
@@ -16077,7 +16158,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Spectrum"
     },
     {
         "name": "Operation Hydra Case",
@@ -16340,7 +16422,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Hydra"
     },
     {
         "name": "Krakow 2017 Inferno Souvenir Package",
@@ -16389,7 +16472,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Krakow 2017 Inferno"
     },
     {
         "name": "Krakow 2017 Mirage Souvenir Package",
@@ -16494,7 +16578,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Krakow 2017 Mirage"
     },
     {
         "name": "Krakow 2017 Cobblestone Souvenir Package",
@@ -16603,7 +16688,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Krakow 2017 Cobblestone"
     },
     {
         "name": "Krakow 2017 Overpass Souvenir Package",
@@ -16710,7 +16796,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Krakow 2017 Overpass"
     },
     {
         "name": "Krakow 2017 Cache Souvenir Package",
@@ -16801,7 +16888,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Krakow 2017 Cache"
     },
     {
         "name": "Krakow 2017 Train Souvenir Package",
@@ -16906,7 +16994,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Krakow 2017 Train"
     },
     {
         "name": "Krakow 2017 Nuke Souvenir Package",
@@ -16975,7 +17064,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Krakow 2017 Nuke"
     },
     {
         "name": "Spectrum 2 Case",
@@ -17489,7 +17579,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Spectrum 2"
     },
     {
         "name": "Boston 2018 Inferno Souvenir Package",
@@ -17538,7 +17629,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Boston 2018 Inferno"
     },
     {
         "name": "Boston 2018 Mirage Souvenir Package",
@@ -17643,7 +17735,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Boston 2018 Mirage"
     },
     {
         "name": "Boston 2018 Cobblestone Souvenir Package",
@@ -17752,7 +17845,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Boston 2018 Cobblestone"
     },
     {
         "name": "Boston 2018 Overpass Souvenir Package",
@@ -17859,7 +17953,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Boston 2018 Overpass"
     },
     {
         "name": "Boston 2018 Cache Souvenir Package",
@@ -17950,7 +18045,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Boston 2018 Cache"
     },
     {
         "name": "Boston 2018 Train Souvenir Package",
@@ -18055,7 +18151,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Boston 2018 Train"
     },
     {
         "name": "Boston 2018 Nuke Souvenir Package",
@@ -18124,7 +18221,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Boston 2018 Nuke"
     },
     {
         "name": "Clutch Case",
@@ -18387,7 +18485,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Clutch"
     },
     {
         "name": "Horizon Case",
@@ -18822,7 +18921,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Horizon"
     },
     {
         "name": "London 2018 Inferno Souvenir Package",
@@ -18947,7 +19047,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "London 2018 Inferno"
     },
     {
         "name": "London 2018 Mirage Souvenir Package",
@@ -19052,7 +19153,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "London 2018 Mirage"
     },
     {
         "name": "London 2018 Dust II Souvenir Package",
@@ -19165,7 +19267,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "London 2018 Dust II"
     },
     {
         "name": "London 2018 Overpass Souvenir Package",
@@ -19272,7 +19375,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "London 2018 Overpass"
     },
     {
         "name": "London 2018 Cache Souvenir Package",
@@ -19363,7 +19467,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "London 2018 Cache"
     },
     {
         "name": "London 2018 Train Souvenir Package",
@@ -19468,7 +19573,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "London 2018 Train"
     },
     {
         "name": "London 2018 Nuke Souvenir Package",
@@ -19593,7 +19699,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "London 2018 Nuke"
     },
     {
         "name": "Danger Zone Case",
@@ -20028,7 +20135,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Danger Zone"
     },
     {
         "name": "Katowice 2019 Inferno Souvenir Package",
@@ -20153,7 +20261,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Katowice 2019 Inferno"
     },
     {
         "name": "Katowice 2019 Mirage Souvenir Package",
@@ -20258,7 +20367,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Katowice 2019 Mirage"
     },
     {
         "name": "Katowice 2019 Dust II Souvenir Package",
@@ -20371,7 +20481,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Katowice 2019 Dust II"
     },
     {
         "name": "Katowice 2019 Overpass Souvenir Package",
@@ -20478,7 +20589,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Katowice 2019 Overpass"
     },
     {
         "name": "Katowice 2019 Cache Souvenir Package",
@@ -20569,7 +20681,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Katowice 2019 Cache"
     },
     {
         "name": "Katowice 2019 Train Souvenir Package",
@@ -20674,7 +20787,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Katowice 2019 Train"
     },
     {
         "name": "Katowice 2019 Nuke Souvenir Package",
@@ -20799,7 +20913,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Katowice 2019 Nuke"
     },
     {
         "name": "Prisma Case",
@@ -21234,7 +21349,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Prisma"
     },
     {
         "name": "Shattered Web Case",
@@ -21669,7 +21785,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Shattered Web"
     },
     {
         "name": "Berlin 2019 Inferno Souvenir Package",
@@ -21794,7 +21911,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Berlin 2019 Inferno"
     },
     {
         "name": "Berlin 2019 Mirage Souvenir Package",
@@ -21899,7 +22017,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Berlin 2019 Mirage"
     },
     {
         "name": "Berlin 2019 Dust II Souvenir Package",
@@ -22012,7 +22131,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Berlin 2019 Dust II"
     },
     {
         "name": "Berlin 2019 Overpass Souvenir Package",
@@ -22119,7 +22239,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Berlin 2019 Overpass"
     },
     {
         "name": "Berlin 2019 Train Souvenir Package",
@@ -22224,7 +22345,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Berlin 2019 Train"
     },
     {
         "name": "Berlin 2019 Nuke Souvenir Package",
@@ -22349,7 +22471,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Berlin 2019 Nuke"
     },
     {
         "name": "Berlin 2019 Vertigo Souvenir Package",
@@ -22400,7 +22523,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Berlin 2019 Vertigo"
     },
     {
         "name": "CS20 Case",
@@ -22598,7 +22722,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "CS20"
     },
     {
         "name": "Prisma 2 Case",
@@ -23033,7 +23158,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Prisma 2"
     },
     {
         "name": "Fracture Case",
@@ -23468,7 +23594,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Fracture"
     },
     {
         "name": "Operation Broken Fang Case",
@@ -23731,7 +23858,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Broken Fang"
     },
     {
         "name": "Snakebite Case",
@@ -23994,7 +24122,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Snakebite"
     },
     {
         "name": "Operation Riptide Case",
@@ -24438,7 +24567,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Riptide"
     },
     {
         "name": "Stockholm 2021 Inferno Souvenir Package",
@@ -24563,7 +24693,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Stockholm 2021 Inferno"
     },
     {
         "name": "Stockholm 2021 Mirage Souvenir Package",
@@ -24696,7 +24827,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Stockholm 2021 Mirage"
     },
     {
         "name": "Stockholm 2021 Dust II Souvenir Package",
@@ -24829,7 +24961,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Stockholm 2021 Dust II"
     },
     {
         "name": "Stockholm 2021 Overpass Souvenir Package",
@@ -24936,7 +25069,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Stockholm 2021 Overpass"
     },
     {
         "name": "Stockholm 2021 Ancient Souvenir Package",
@@ -25069,7 +25203,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Stockholm 2021 Ancient"
     },
     {
         "name": "Stockholm 2021 Nuke Souvenir Package",
@@ -25194,7 +25329,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Stockholm 2021 Nuke"
     },
     {
         "name": "Stockholm 2021 Vertigo Souvenir Package",
@@ -25327,7 +25463,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Stockholm 2021 Vertigo"
     },
     {
         "name": "Dreams & Nightmares Case",
@@ -25771,7 +25908,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Dreams & Nightmares"
     },
     {
         "name": "Antwerp 2022 Inferno Souvenir Package",
@@ -25896,7 +26034,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Antwerp 2022 Inferno"
     },
     {
         "name": "Antwerp 2022 Mirage Souvenir Package",
@@ -26029,7 +26168,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Antwerp 2022 Mirage"
     },
     {
         "name": "Antwerp 2022 Dust II Souvenir Package",
@@ -26162,7 +26302,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Antwerp 2022 Dust II"
     },
     {
         "name": "Antwerp 2022 Overpass Souvenir Package",
@@ -26269,7 +26410,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Antwerp 2022 Overpass"
     },
     {
         "name": "Antwerp 2022 Ancient Souvenir Package",
@@ -26402,7 +26544,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Antwerp 2022 Ancient"
     },
     {
         "name": "Antwerp 2022 Nuke Souvenir Package",
@@ -26527,7 +26670,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Antwerp 2022 Nuke"
     },
     {
         "name": "Antwerp 2022 Vertigo Souvenir Package",
@@ -26660,7 +26804,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Antwerp 2022 Vertigo"
     },
     {
         "name": "Recoil Case",
@@ -26923,7 +27068,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Recoil"
     },
     {
         "name": "Rio 2022 Inferno Souvenir Package",
@@ -27048,7 +27194,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Rio 2022 Inferno"
     },
     {
         "name": "Rio 2022 Mirage Souvenir Package",
@@ -27181,7 +27328,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Rio 2022 Mirage"
     },
     {
         "name": "Rio 2022 Dust II Souvenir Package",
@@ -27314,7 +27462,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Rio 2022 Dust II"
     },
     {
         "name": "Rio 2022 Overpass Souvenir Package",
@@ -27421,7 +27570,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Rio 2022 Overpass"
     },
     {
         "name": "Rio 2022 Ancient Souvenir Package",
@@ -27554,7 +27704,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Rio 2022 Ancient"
     },
     {
         "name": "Rio 2022 Nuke Souvenir Package",
@@ -27679,7 +27830,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Rio 2022 Nuke"
     },
     {
         "name": "Rio 2022 Vertigo Souvenir Package",
@@ -27812,7 +27964,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Rio 2022 Vertigo"
     },
     {
         "name": "Revolution Case",
@@ -28075,7 +28228,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Revolution"
     },
     {
         "name": "Paris 2023 Inferno Souvenir Package",
@@ -28200,7 +28354,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Paris 2023 Inferno"
     },
     {
         "name": "Paris 2023 Mirage Souvenir Package",
@@ -28333,7 +28488,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Paris 2023 Mirage"
     },
     {
         "name": "Paris 2023 Anubis Souvenir Package",
@@ -28466,7 +28622,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Paris 2023 Anubis"
     },
     {
         "name": "Paris 2023 Overpass Souvenir Package",
@@ -28573,7 +28730,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Paris 2023 Overpass"
     },
     {
         "name": "Paris 2023 Ancient Souvenir Package",
@@ -28706,7 +28864,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Paris 2023 Ancient"
     },
     {
         "name": "Paris 2023 Nuke Souvenir Package",
@@ -28831,7 +28990,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Paris 2023 Nuke"
     },
     {
         "name": "Paris 2023 Vertigo Souvenir Package",
@@ -28964,7 +29124,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Paris 2023 Vertigo"
     },
     {
         "name": "Kilowatt Case",
@@ -29162,7 +29323,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Kilowatt"
     },
     {
         "name": "Copenhagen 2024 Inferno Souvenir Package",
@@ -29287,7 +29449,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Copenhagen 2024 Inferno"
     },
     {
         "name": "Copenhagen 2024 Mirage Souvenir Package",
@@ -29420,7 +29583,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Copenhagen 2024 Mirage"
     },
     {
         "name": "Copenhagen 2024 Anubis Souvenir Package",
@@ -29553,7 +29717,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Copenhagen 2024 Anubis"
     },
     {
         "name": "Copenhagen 2024 Overpass Souvenir Package",
@@ -29660,7 +29825,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Copenhagen 2024 Overpass"
     },
     {
         "name": "Copenhagen 2024 Ancient Souvenir Package",
@@ -29793,7 +29959,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Copenhagen 2024 Ancient"
     },
     {
         "name": "Copenhagen 2024 Nuke Souvenir Package",
@@ -29918,7 +30085,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Copenhagen 2024 Nuke"
     },
     {
         "name": "Copenhagen 2024 Vertigo Souvenir Package",
@@ -30051,7 +30219,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Copenhagen 2024 Vertigo"
     },
     {
         "name": "Shanghai 2024 Inferno Souvenir Package",
@@ -30176,7 +30345,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Shanghai 2024 Inferno"
     },
     {
         "name": "Shanghai 2024 Mirage Souvenir Package",
@@ -30309,7 +30479,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Shanghai 2024 Mirage"
     },
     {
         "name": "Shanghai 2024 Anubis Souvenir Package",
@@ -30442,7 +30613,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Shanghai 2024 Anubis"
     },
     {
         "name": "Shanghai 2024 Dust II Souvenir Package",
@@ -30575,7 +30747,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Shanghai 2024 Dust II"
     },
     {
         "name": "Shanghai 2024 Ancient Souvenir Package",
@@ -30708,7 +30881,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Shanghai 2024 Ancient"
     },
     {
         "name": "Shanghai 2024 Nuke Souvenir Package",
@@ -30833,7 +31007,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Shanghai 2024 Nuke"
     },
     {
         "name": "Shanghai 2024 Vertigo Souvenir Package",
@@ -30966,7 +31141,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Shanghai 2024 Vertigo"
     },
     {
         "name": "Austin 2025 Inferno Souvenir Package",
@@ -31091,7 +31267,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Austin 2025 Inferno"
     },
     {
         "name": "Austin 2025 Mirage Souvenir Package",
@@ -31224,7 +31401,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Austin 2025 Mirage"
     },
     {
         "name": "Austin 2025 Anubis Souvenir Package",
@@ -31357,7 +31535,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Austin 2025 Anubis"
     },
     {
         "name": "Austin 2025 Dust II Souvenir Package",
@@ -31490,7 +31669,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Austin 2025 Dust II"
     },
     {
         "name": "Austin 2025 Ancient Souvenir Package",
@@ -31623,7 +31803,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Austin 2025 Ancient"
     },
     {
         "name": "Austin 2025 Nuke Souvenir Package",
@@ -31748,7 +31929,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Austin 2025 Nuke"
     },
     {
         "name": "Austin 2025 Train Souvenir Package",
@@ -31861,7 +32043,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Austin 2025 Train"
     },
     {
         "name": "Gallery Case",
@@ -32059,7 +32242,8 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Gallery"
     },
     {
         "name": "Fever Case",
@@ -32494,6 +32678,7 @@
                 }
             ]
         },
-        "cost": 0
+        "cost": 0,
+        "alias": "Fever"
     }
 ]

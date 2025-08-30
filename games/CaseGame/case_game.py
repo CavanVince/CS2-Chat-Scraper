@@ -1,6 +1,7 @@
 from utils import write_command
 from dataclasses import dataclass
 import random, time, json
+import difflib
 
 # ---------- Cache ----------
 _cases_cache = None  
@@ -40,8 +41,12 @@ def open_case(context: Context):
 
     case = get_case(case_name)
     if not case:
-        write_command(f"say '{case_name}' is not a valid case."); example_cases(); return
-
+        guess = case_guess(case_name)
+        if not guess:
+            write_command(f"say '{case_name}' is not a valid case."); example_cases(); return
+        print(guess + " was the closest match")
+        case = get_case(guess)
+        case_name = case.get("name", guess)
     write_command(f"say {context.username} is opening {case_name}...")
     items_by_rarity = case.get("contains", {})
 
@@ -75,6 +80,17 @@ def open_case(context: Context):
     write_command(f"say {context.username} received: {item_name} ({rarity}). "
                   f"${item_price:.2f} added to balance.")
 
+def case_guess(case : str):
+    cases = get_case_list()
+    closest = difflib.get_close_matches(case, cases.keys(), n=1, cutoff=0.5)
+    if not closest:
+        alias_to_exact = {}
+        for exact, meta in cases.items():
+            alias = meta.get("alias", exact)
+            alias_to_exact[alias] = exact
+        closest = difflib.get_close_matches(case, alias_to_exact.keys(), n=1, cutoff=0.5)
+        return alias_to_exact[closest[0]] if closest else None
+    return closest[0] if closest else None
 
 def case_battle(context: Context):
     write_command(f"say {commands['battle']}")
@@ -118,7 +134,6 @@ def get_case(case_name: str):
 
 # ---------- Entry Point ----------
 def start(username: str, args: str):
-    print(args)
     if not args:
         help_cmd()
         return
@@ -129,8 +144,6 @@ def start(username: str, args: str):
     parts = args.split(" ",1)
     command = parts[0].strip().lower()
     rest = parts[1].strip() if len(parts) > 1 else ""
-    print(command)
-    print(rest)
 
     context = Context(username=username, args=[command, rest])
 
