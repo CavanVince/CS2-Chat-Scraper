@@ -1,0 +1,39 @@
+09/03 23:37:33  [ALL] admin‎: !roast kevin 
+09/03 23:38:54  [ALL] admin‎: !roast kevin 
+09/03 23:39:20  [ALL] admin‎: !roast parker 
+09/03 23:40:28  [ALL] admin‎: !roast kevin
+09/03 23:41:41  [ALL] admin‎: !roast kevin
+09/03 23:44:22  [ALL] admin‎: !roast kevin
+09/03 23:45:46  [ALL] admin‎: !roast kevin
+09/03 23:46:53  [ALL] admin‎: !roast parker
+09/03 23:46:59  [ALL] admin‎: =!roast luke
+09/03 23:47:04  [ALL] admin‎: !roast luke
+09/03 23:47:12  [ALL] admin‎: !roast braedan
+09/03 23:49:35  [ALL] admin‎: !roast cavan
+09/03 23:49:47  [ALL] admin‎: !roast parker
+09/03 23:49:58  [ALL] admin‎: !roast parker
+09/03 23:50:09  [ALL] admin‎: !roast justin
+09/03 23:50:45  [ALL] admin‎: !roast jimmy
+09/03 23:59:27  [ALL] admin‎: !roast jim
+09/04 00:00:12  [ALL] admin‎: !roast jim
+09/04 00:07:55  [ALL] admin‎: !roast kevin
+09/04 00:08:04  [ALL] admin‎: !roast jim
+09/04 00:08:11  [ALL] admin‎: !roast jim
+09/04 00:08:50  [ALL] admin‎: !roast jim
+09/04 00:09:57  [ALL] admin‎: !roast jimmy
+09/04 00:10:46  [ALL] admin‎: !roast parker
+09/04 00:14:35  [ALL] admin‎: !roast jim
+09/04 00:14:40  [ALL] admin‎: !roast parker
+09/04 00:14:45  [ALL] admin‎: !roast parker
+09/04 00:14:49  [ALL] admin‎: !roast parker
+09/04 00:14:54  [ALL] admin‎: !roast jimmy
+09/04 00:14:59  [ALL] admin‎: !roast jim
+09/04 00:38:39  [ALL] admin‎: !fortune-cookie
+09/04 00:59:37  [ALL] admin‎: !fortune-cookie
+09/04 01:00:00  [ALL] admin‎: !fortune-cookie
+09/04 01:03:26  [ALL] admin‎: !fortune-cookie
+09/04 01:04:14  [ALL] admin‎: !fortune-cokie
+09/04 01:04:16  [ALL] admin‎: !fc
+09/04 01:04:42  [ALL] admin‎: !fc
+09/04 01:05:27  [ALL] admin‎: !fc
+09/04 01:06:42  [ALL] admin‎: !fc

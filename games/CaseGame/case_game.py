@@ -1,4 +1,4 @@
-from utils import write_command
+from utils import write_and_send_command
 from dataclasses import dataclass
 import random, time, json
 import difflib
@@ -37,22 +37,27 @@ def open_case(context: Context):
     additional = 0.0
     case_name = context.args[1].strip() if len(context.args) > 1 else ""
     if not case_name:
-        write_command("say Usage: open <case name>"); example_cases(); return
+        write_and_send_command("say Usage: open <case name>")
+        example_cases()
+        return
 
     case = get_case(case_name)
     if not case:
         guess = case_guess(case_name)
         if not guess:
-            write_command(f"say '{case_name}' is not a valid case."); example_cases(); return
+            write_and_send_command(f"say '{case_name}' is not a valid case.")
+            example_cases()
+            return
         print(guess + " was the closest match")
         case = get_case(guess)
         case_name = case.get("name", guess)
-    write_command(f"say {context.username} is opening {case_name}...")
+    write_and_send_command(f"say {context.username} is opening {case_name}...")
     items_by_rarity = case.get("contains", {})
 
     present = {r: w for r, w in case_odds.items() if items_by_rarity.get(r)}
     if not present:
-        write_command("say Error: case has no items configured."); return
+        write_and_send_command("say Error: case has no items configured.")
+        return
 
     # Adjust odds if low-tier if not souvenir
     if "Consumer Grade" not in present:
@@ -69,7 +74,8 @@ def open_case(context: Context):
 
     pool = items_by_rarity.get(rarity, [])
     if not pool:
-        write_command("say Error: rolled a rarity with no items."); return
+        write_and_send_command("say Error: rolled a rarity with no items.")
+        return
 
     item = random.choice(pool)
     item_name = item.get("name", "Unknown Item")
@@ -77,7 +83,7 @@ def open_case(context: Context):
     context.balance += item_price
 
     time.sleep(0.5)
-    write_command(f"say {context.username} received: {item_name} ({rarity}). "
+    write_and_send_command(f"say {context.username} received: {item_name} ({rarity}). "
                   f"${item_price:.2f} added to balance.")
 
 def case_guess(case : str):
@@ -93,19 +99,19 @@ def case_guess(case : str):
     return closest[0] if closest else None
 
 def case_battle(context: Context):
-    write_command(f"say {commands['battle']}")
+    write_and_send_command(f"say {commands['battle']}")
 
 def check_balance(context: Context):
-    write_command(f"say {context.username}'s balance: ${context.balance:.2f}")
+    write_and_send_command(f"say {context.username}'s balance: ${context.balance:.2f}")
 
 def help_cmd():
-    write_command("say Commands: " + ", ".join(sorted(commands)))
+    write_and_send_command("say Commands: " + ", ".join(sorted(commands)))
 
 def example_cases():
     names = list(get_case_list().keys())
     first_3 = names[:3]
     suffix = "" if len(names) <= 3 else f" …and {len(names) - 3} more"
-    write_command(f"say Example cases: {', '.join(first_3)}{suffix}")
+    write_and_send_command(f"say Example cases: {', '.join(first_3)}{suffix}")
 
 # ---------- Data Loading ----------
 def open_json_file(path: str):
@@ -138,9 +144,6 @@ def start(username: str, args: str):
         help_cmd()
         return
  
-    if not args:
-        help_cmd()
-        return
     parts = args.split(" ",1)
     command = parts[0].strip().lower()
     rest = parts[1].strip() if len(parts) > 1 else ""
@@ -159,7 +162,7 @@ def start(username: str, args: str):
         case "help":
             help_cmd()
         case _:
-            write_command(f"say Unknown command '{command}'. Type 'help' for commands.")
+            write_and_send_command(f"say Unknown command '{command}'. Type 'help' for commands.")
 
 if __name__ == "__main__":
     start("test_user", "open Atlanta 2017 Dust II Souvenir Package")
