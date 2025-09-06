@@ -1,0 +1,16 @@
+[
+  {
+    "__type__": "Player",
+    "username": "jumajuma",
+    "goblins": 2,
+    "currency": {
+      "__type__": "Currency",
+      "resources": {
+        "gold": 0,
+        "lumber": 0,
+        "food": 0
+      }
+    },
+    "buildings": []
+  }
+]

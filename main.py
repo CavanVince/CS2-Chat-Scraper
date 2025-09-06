@@ -1,19 +1,42 @@
+import asyncio
 import os
-import time
 import re
-import requests
-import json
-from games.roast import roast
-from utils import CONSOLE_FILE, write_and_send_command, Metadata
-from games import coinflip
-from games.CaseGame import case_game
-from games.fortune_cookie import fortune_cookie
 
-MAP_EXPR = re.compile(r"\[HostStateManager\] Host activate: Loading \((.*)\)")
+from games.case_game.case_game import CaseGame
+from games.fortune_cookie.fortune_cookie import FortuneCookie
+from games.goblin_clicker.goblin_clicker import GoblinClicker
+from games.roast_game.roast import Roast
+from utils import CONSOLE_FILE
 
+COMMAND_RE = re.compile(r"\[(?:ALL|(?:C)?(?:T)?)\]\s+(.*)‎(?:﹫\w+)?\s*(?:\[DEAD\])?:(?:\s)?(\!\S+)?\s(.+)?")
 
-def listen(filepath: str, **kwargs):
-    with open(filepath, "r", encoding="utf-8") as fp:
+fortune_cookie = FortuneCookie()
+case_game = CaseGame()
+roast = Roast()
+goblin_clicker = GoblinClicker()
+
+async def command_dispatcher(command_queue: asyncio.Queue):
+    while True:
+        username, service, command, *args = await command_queue.get()
+        service, command = service.lower(), command.lower()
+        
+        svc = None
+        match service:
+            case "!fc" | "!fortune" | "!fortune-cookie":
+                svc = fortune_cookie
+            case "!case":
+                svc = case_game
+            case "!roast":
+                svc = roast
+            case "!gc" | "!goblin" | "!goblin-clicker" | "!clicker":
+                svc = goblin_clicker
+        if not svc:
+            return
+        print(f"Handling request for service {service}")
+        await svc.handle_command(username, command, *args)
+
+async def poll_console_log(command_queue: asyncio.Queue):
+    with open(CONSOLE_FILE, "r", encoding="utf-8") as fp:
         fp.seek(0, os.SEEK_END)
         last_size = fp.tell()
 
@@ -24,98 +47,38 @@ def listen(filepath: str, **kwargs):
                 last_size = current_size
 
             line = fp.readline()
-            if not line:
-                time.sleep(0.1)
+            if not line or not (matches := re.search(COMMAND_RE, line)):
+                await asyncio.sleep(1)
                 continue
 
-            print(line.strip())
-            parse(line, kwargs=kwargs)
+            username = matches.group(1)
+            service = matches.group(2)
+            args = matches.group(3) or ""
+            if service is None:
+                await asyncio.sleep(1)
+                continue
+            
+            print(f"Console log matched pattern: {username}, {service} {args}")
+            await command_queue.put((username, service, *[a.strip() for a in args.split(" ")]))
             last_size = fp.tell()
 
+async def main():
+    command_queue = asyncio.Queue()
 
-def parse(line, metadata: Metadata = None, **kwargs):
-    if metadata is None:
-        metadata = Metadata()
-
-    r_match = re.search(
-        r"\[(?:ALL|(?:C)?(?:T)?)\]\s+(.*)‎(?:﹫\w+)?\s*(?:\[DEAD\])?:(?:\s)?(\S+)?\s(.+)?",
-        line,
-        flags=re.UNICODE,
-    )
-    if not r_match:
-        return
-
-    username = r_match.group(1)
-    command = r_match.group(2)
-    args = r_match.group(3)
-
-    match command:
-        case "!blackjack":
-            time.sleep(0.5)
-            write_and_send_command(f"say {username} {command} {args}")
-        case "!flip":
-            time.sleep(0.5)
-            coinflip.flip(username)
-        case "!case":
-            time.sleep(0.5)
-            case_game.start(username, args)
-        case "!roast":
-            time.sleep(0.5)
-            roast.start(username, args, metadata=metadata, **kwargs)
-        case "!fortune-cookie" | "!fc" | "!fortune":
-            time.sleep(0.5)
-            fortune_cookie.start(username, args)
-
-
-def reverse_readline(filename, buf_size=8192):
-    with open(filename, "rb") as f:
-        f.seek(0, 2)
-        buffer = b""
-        pointer = f.tell()
-        while pointer > 0:
-            read_size = min(buf_size, pointer)
-            pointer -= read_size
-            f.seek(pointer)
-            data = f.read(read_size)
-            buffer = data + buffer
-            lines = buffer.split(b"\n")
-            buffer = lines[0]
-            for line in reversed(lines[1:]):
-                yield line.decode("utf-8", errors="replace")
-        if buffer:
-            yield buffer.decode("utf-8", errors="replace")
-
-
-def find_metadata(filename: str) -> Metadata:
-    for line in reverse_readline(filename):
-        if m := re.search(MAP_EXPR, line):
-            map_name = m.group(1)
-            break
-    else:
-        return
-
-    map_name = map_name.split("_", 1)[1]
-    return Metadata(map_name=map_name)
-
+    try:
+        await asyncio.gather(
+            poll_console_log(command_queue),
+            command_dispatcher(command_queue),
+            goblin_clicker.run(),
+        )
+    except (asyncio.exceptions.CancelledError, KeyboardInterrupt):
+        print("Done!")
+    except Exception as err:
+        print(err)
+        raise
+    finally:
+        goblin_clicker.save()
 
 if __name__ == "__main__":
-    metadata = find_metadata(CONSOLE_FILE)
-
-    db = "https://csfloat.com/api/v1/listings/price-list"
-    try:
-        response = requests.get(db)
-        response.raise_for_status()
-
-        prices = response.json()
-        with open("skin_prices.json", "w") as f:
-            json.dump(prices, f, indent=4)
-
-    except requests.exceptions.RequestException as e:
-        print(f"Error fetching data from API: {e}")
-    except json.JSONDecodeError as e:
-        print(f"Error decoding JSON: {e}")
-    try:
-        while True:
-            listen(CONSOLE_FILE, metadata=metadata)
-    except KeyboardInterrupt:
-        print("galls gone")
+    asyncio.run(main())
+    

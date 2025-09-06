@@ -18,8 +18,8 @@ def iter_items(root):
         for item in root.get("contains_rare", []):
             yield item
 
-def normalize(path_in="games/CaseGame/case_data.json",
-              path_out="games/CaseGame/case_data.json"):
+def normalize(path_in="games/case_game/case_data.json",
+              path_out="games/case_game/case_data.json"):
     data = parse_json(path_in)
     modified = 0
 
@@ -87,8 +87,8 @@ def buckets_contains(case):
 
     return case
 
-def clean_cases(path_in="games/CaseGame/case_data.json",
-                      path_out="games/CaseGame/case_data.json"):
+def clean_cases(path_in="games/case_game/case_data.json",
+                      path_out="games/case_game/case_data.json"):
     data = parse_json(path_in)
 
     for case in data:
@@ -108,7 +108,7 @@ def clean_cases(path_in="games/CaseGame/case_data.json",
         json.dump(data, f, ensure_ascii=False, indent=4)
 
 def fix_names():
-    data = parse_json("games/CaseGame/case_data.json")
+    data = parse_json("games/case_game/case_data.json")
     for case in data:
         case.pop("input", None)
         if "Souvenir Package" in case["name"]:
@@ -119,7 +119,7 @@ def fix_names():
                 case["alias"] = case["alias"].replace("Operation", "").strip()
         if "Weapon" in case["name"]:
             case["alias"] = case["name"].replace("Weapon", "").strip()
-    with open("games/CaseGame/case_data_temp.json", "w", encoding="utf-8") as f:
+    with open("games/case_game/case_data_temp.json", "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
 
 if __name__ == "__main__":

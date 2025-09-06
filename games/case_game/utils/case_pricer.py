@@ -43,11 +43,11 @@ def update_prices(data):
                         continue
 
 def main():
-    with open("games/CaseGame/case_data.json", "r", encoding="utf-8") as f:
+    with open("games/case_game/case_data.json", "r", encoding="utf-8") as f:
         data = json.load(f)
     update_prices(data)
 
-    with open("games/CaseGame/case_data.json", "w", encoding="utf-8") as f:
+    with open("games/case_game/case_data.json", "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
 
 if __name__ == "__main__":
