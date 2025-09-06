@@ -26,9 +26,9 @@ async def press_key():
     pyautogui.press("=")
 
 
-def write_and_send_command(command, **kwargs):
+async def write_and_send_command(command, **kwargs):
     write_command(command, **kwargs)
-    press_key()
+    await press_key()
 
 
 def gen_unique_nums(amt: int = 5, lower_bound: int = 1, upper_bound: int = 100):

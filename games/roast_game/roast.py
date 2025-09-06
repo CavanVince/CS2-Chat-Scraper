@@ -46,4 +46,4 @@ class Roast(Game):
 
         if not isinstance(selected_roast, str):
             selected_roast = selected_roast(roastee, roaster=username)
-        write_and_send_command(f"say | Roast Bot |: {selected_roast}")
+        await write_and_send_command(f"say | Roast Bot |: {selected_roast}")

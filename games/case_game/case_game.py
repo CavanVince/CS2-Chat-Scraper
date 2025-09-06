@@ -4,7 +4,7 @@ from functools import lru_cache
 import json
 import os
 import random
-import time
+import asyncio
 
 from typing import Dict
 from utils import write_and_send_command
@@ -67,36 +67,36 @@ class CaseGame(Game):
             case "help" | None | "":
                 cmd = self.help_cmd
             case _:
-                write_and_send_command(
+              await write_and_send_command(
                     f"say Unknown command '{command}'. Type 'help' for commands."
                 )
         if cmd is None:
             return
         print(f"Running command '{command}'")
-        cmd(username, *args)
+        await cmd(username, *args)
 
-    def open_case(self, username, *args):
+    async def open_case(self, username, *args):
         player: Player = self.players.setdefault(username, Player(username))
 
         additional = 0.0
         case_name = " ".join(args)
         if not case_name:
-            write_and_send_command("say Usage: open <case name>")
+            await write_and_send_command("say Usage: open <case name>")
             self.example_cases()
             return
 
         true_case_name, case = self.get_case(case_name)
         if not case:
-            write_and_send_command(f"say '{case_name}' is not a valid case.")
+            await write_and_send_command(f"say '{case_name}' is not a valid case.")
             self.example_cases()
             return
         
-        write_and_send_command(f"say {username} is opening {true_case_name}...")
+        await write_and_send_command(f"say {username} is opening {true_case_name}...")
         
         items_by_rarity = case.get("contains", {})
         present = {r: w for r, w in CASE_ODDS.items() if items_by_rarity.get(r)}
         if not present:
-            write_and_send_command("say Error: case has no items configured.")
+            await write_and_send_command("say Error: case has no items configured.")
             return
 
         # Adjust odds if low-tier if not souvenir
@@ -114,7 +114,7 @@ class CaseGame(Game):
 
         pool = items_by_rarity.get(rarity, [])
         if not pool:
-            write_and_send_command("say Error: rolled a rarity with no items.")
+            await write_and_send_command("say Error: rolled a rarity with no items.")
             return
 
         item = random.choice(pool)
@@ -122,27 +122,27 @@ class CaseGame(Game):
         item_price = float(item.get("price", 0.0))
         player.balance += item_price
 
-        time.sleep(0.5)
-        write_and_send_command(
+        await asyncio.sleep(0.5)
+        await write_and_send_command(
             f"say {username} received: {item_name} ({rarity}). "
             f"${item_price:.2f} added to balance."
         )
 
-    def case_battle(self, username, *args):
-        write_and_send_command(f"say {COMMANDS['battle']}")
+    async def case_battle(self, username, *args):
+      await write_and_send_command(f"say {COMMANDS['battle']}")
 
-    def check_balance(self, username, *args):
+    async def check_balance(self, username, *args):
         balance = self.players.setdefault(username, Player(username)).balance
-        write_and_send_command(f"say {username}'s balance: ${balance:.2f}")
+        await write_and_send_command(f"say {username}'s balance: ${balance:.2f}")
 
-    def help_cmd(self, *_):
-        write_and_send_command("say Commands: " + ", ".join(sorted(COMMANDS)))
+    async def help_cmd(self, *_):
+        await write_and_send_command("say Commands: " + ", ".join(sorted(COMMANDS)))
 
-    def example_cases(self, *_):
+    async def example_cases(self, *_):
         names = list(self.get_case_list().keys())
         first_3 = names[:3]
         suffix = "" if len(names) <= 3 else f" …and {len(names) - 3} more"
-        write_and_send_command(f"say Example cases: {', '.join(first_3)}{suffix}")
+        await write_and_send_command(f"say Example cases: {', '.join(first_3)}{suffix}")
 
     @lru_cache
     def get_case_list(self):

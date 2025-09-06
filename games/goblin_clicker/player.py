@@ -1,6 +1,6 @@
 from typing import List
 
-from games.goblin_clicker.buildings import Building
+from games.goblin_clicker.buildings import Building, GoldVault, Lumbermill, Farm
 from games.goblin_clicker.currency import Currency, CurrencyType
 
 class Player:
