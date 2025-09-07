@@ -1,6 +1,7 @@
 import asyncio
 import os
 import shutil
+from functools import lru_cache
 from typing import List
 from games.base_game import Game
 from datetime import datetime, timezone
@@ -8,81 +9,156 @@ import json
 
 from utils import say
 from games.goblin_clicker.player import Player
-from games.goblin_clicker.common import SAVE_FILE_DIR, SAVE_INTERVAL
+from games.goblin_clicker.currency import NotEnoughCurrencyError
+from games.goblin_clicker.buildings import Building
+from games.goblin_clicker.common import RES_DIR, SAVE_INTERVAL
 from games.goblin_clicker.codecs import game_object_hook, GameEncoder
+
 
 class GoblinClicker(Game):
     def __init__(self):
-        if not os.path.exists(SAVE_FILE_DIR):
-            print(f"Making save directory for goblin clicker at :{SAVE_FILE_DIR}")
-            os.makedirs(SAVE_FILE_DIR)
+        if not os.path.exists(RES_DIR):
+            print(f"Making save directory for goblin clicker at :{RES_DIR}")
+            os.makedirs(RES_DIR)
 
         self.players: List[Player] = []
 
         self._last_saved = datetime.now(tz=timezone.utc)
 
-        self.init_from_file()
+        self.load()
 
-    def init_from_file(self):
+    def load(self):
         try:
-            save_file = os.path.join(SAVE_FILE_DIR, "goblin_clicker.dat")
+            save_file = os.path.join(RES_DIR, "goblin_clicker.dat")
             if os.path.exists(save_file):
-                with open(save_file, 'r') as fp:
-                    players = json.load(fp, object_hook=game_object_hook)
+                with open(save_file, "r") as fp:
+                    players = json.load(fp, object_hook=game_object_hook)["data"]
+
+                print(f"Loaded {len(players)} players' data from save file")
                 self.players.extend(players)
         except Exception as err:
-            new_filename = save_file.replace(".dat", f"{datetime.now(tz=timezone.utc).strftime('%Y%m%d_%H%M%S')}.dat.bak")
-            print(f"ERROR: failed to load goblin clicker data. Has it been corrupted? Moving file location to: {new_filename} to prevent overwritten data. {err}")
+            new_filename = save_file.replace(
+                ".dat",
+                f"{datetime.now(tz=timezone.utc).strftime('%Y%m%d_%H%M%S')}.dat.bak",
+            )
+            print(
+                f"ERROR: failed to load goblin clicker data. Has it been corrupted? Moving file location to: {new_filename} to prevent overwritten data. {err}"
+            )
             shutil.copyfile(save_file, new_filename)
 
     def save(self):
         if not self.players:
             return
-        save_file = os.path.join(SAVE_FILE_DIR, "goblin_clicker.dat")
-        with open(save_file, 'w') as fp:
-            json.dump(self.players, fp, cls=GameEncoder, indent=2)
+        save_file = os.path.join(RES_DIR, "goblin_clicker.dat")
         self._last_saved = datetime.now(tz=timezone.utc)
+        with open(save_file, "w") as fp:
+            json.dump({"last_saved": self._last_saved.isoformat(), "data": self.players}, fp, cls=GameEncoder, indent=2)
+
 
     async def run(self):
         while True:
             # autosave every SAVE_INTERVAL units
             if datetime.now(tz=timezone.utc) - SAVE_INTERVAL >= self._last_saved:
-                print("saving")
+                print("autosaving goblin clicker data")
                 self.save()
 
             # eventually we could use deltatime here but i cant be fucked atm
             await asyncio.sleep(1)
-            for player in self.players:
-                player.tick()
+            self.tick()
+
+    def tick(self):
+        print("tick")
+        for player in self.players:
+            for building in player.buildings:
+                player.currency += building.production_per_tick
 
     async def handle_command(self, username, command, *args):
         player = self._get_player(username)
         if not player and command != "start":
-            await say(f"Unknown player {username}. Start your goblin clicker adventure with '!gc start'")
+            await say(
+                f"Unknown player {username}. Start your goblin clicker adventure with '!gc start'"
+            )
             return
-        
+
         match command:
             case "start":
                 if player:
-                    await say(f"{username} you already have a hamlet! Use '!gc help' to get more commands")
+                    await say(
+                        f"{username} you already have a hamlet! Use '!gc help' to get more commands"
+                    )
                     await self._say_stats(player)
                     return
-                
+
                 player = self._get_player(username, create_if_not_found=True)
                 await say(f"A new goblin hamlet was created for you, {username}")
                 await self._say_stats(player)
-            case "purchase" | "buy":
-                self._handle_purchase(player)
-            case "sell":
-                ...
-            case "status" | "check":
-                await self._say_stats(player)
+            case "upgrade":
+                if len(args) < 1:
+                    await say(
+                        "You must supply the name of the building you wish to upgrade. ex. '!gc upgrade goldmine'"
+                    )
+                    return
 
-    def _handle_purchase(player: Player, building_type: str, *args):
-        ...
+                building_name, args = args[0], args[1:]
+                building = player.get_building_by_name(building_name)
+                if not building:
+                    await say(f"No building was found by name: {building_name}")
+                    return
+                await self._handle_upgrade(player, building, *args)
+            case "status" | "check" | "" | None:
+                if player is None:
+                    await self._help_menu(player, *args)
+                else:
+                    await self._say_stats(player, *args)
+            case "help":
+                await self._help_menu(player, *args)
 
-    async def _say_stats(self, player: Player):
-        await say(f"{player.username}'{'s' if not player.username.endswith('s') else ''} Resources -- {player.currency}")
+    async def _help_menu(self, player: Player, *args):
+        for line in self.get_help_menu():
+            await say(line)
+
+    @lru_cache
+    def get_help_menu(self):
+        with open(os.path.join(RES_DIR, "help_menu.txt"), 'r') as fp:
+            return fp.readlines()
+
+
+    async def _say_stats(self, player: Player, *args):
+        un_str = f"{player.username}'{'s' if not player.username.endswith('s') else ''}"
+        # long format
+        if len(args) > 0 and args[0] == "-l":
+            await say(f"{un_str} Resources -- {player.currency}")
+            for building in player.buildings:
+                await say(str(building))
+        else:
+            await say(f"{player.username} - {player.currency.short_string()}")
+            for building in player.buildings:
+                await say(building.short_string())
+
+    async def _handle_upgrade(self, player: Player, building: Building, *args):
+        if player.currency < building.cost_to_upgrade:
+            await say(
+                f"Not enough resources to upgrade {building.__class__.__name__}, requires: {building.cost_to_upgrade}"
+            )
+            return
+        
+        async def upgrade() -> bool:
+            try:
+                building.upgrade(player.currency)
+            except NotEnoughCurrencyError:
+                return False
+            return True
+        
+        old_production = building.production_per_tick
+        old_level = building.level
+
+        if len(args) > 0 and args[0] == "-m":
+            while building.can_upgrade() and (_ := await upgrade()):
+                continue
+        else:
+            await upgrade()
+        await say(f"{building.__class__.__name__} upgraded from level {old_level} -> {building.level}. P/s: {old_production} -> {building.production_per_tick}")
+        await say(f"Remaining currency: {player.currency.short_string()}." + f" Required for next upgrade: {building.cost_to_upgrade.short_string()}" if building.can_upgrade() else '')
 
     def _get_player(self, username: str, create_if_not_found: bool = False):
         for p in self.players:

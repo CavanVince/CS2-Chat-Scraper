@@ -1,16 +1,32 @@
-[
-  {
-    "__type__": "Player",
-    "username": "jumajuma",
-    "goblins": 2,
-    "currency": {
-      "__type__": "Currency",
-      "resources": {
-        "gold": 0,
-        "lumber": 0,
-        "food": 0
-      }
-    },
-    "buildings": []
-  }
-]
+{
+  "last_saved": "2025-09-07T03:46:58.939367+00:00",
+  "data": [
+    {
+      "__type__": "Player",
+      "username": "jumajuma",
+      "goblins": 2,
+      "currency": {
+        "__type__": "Currency",
+        "resources": {
+          "lumber": 8753.0,
+          "food": 18537.0,
+          "gold": 10744.0
+        }
+      },
+      "buildings": [
+        {
+          "__type__": "GoldMine",
+          "level": 100
+        },
+        {
+          "__type__": "LumberMill",
+          "level": 100
+        },
+        {
+          "__type__": "Farm",
+          "level": 100
+        }
+      ]
+    }
+  ]
+}

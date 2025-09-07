@@ -1,0 +1,5 @@
+'!gc start [-r]'  Start a new game (-r to restart if user exists)
+'!gc status [-l]' Show your goblin hamlet status (-l for long format)
+'!gc upgrade <b> [-m]' Upgrade the given building if you can afford it (-m update this building as many times as is affordable)
+'!gc help'        Show this help menu
+Aliases: !goblin, !goblinclicker

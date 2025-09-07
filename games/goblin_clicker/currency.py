@@ -1,6 +1,9 @@
 from typing import Dict
 from dataclasses import dataclass, field
 
+class NotEnoughCurrencyError(Exception): 
+    pass
+
 @dataclass
 class CurrencyType:
     FOOD: str = "food"
@@ -28,15 +31,24 @@ class Currency:
 
     def __ge__(self, other: "Currency"):
         return all(self[res] >= other[res] for res in other.resources)
+    
+    def __gt__(self, other: "Currency"):
+        return all(self[res] > other[res] for res in other.resources)
 
     def __le__(self, other: "Currency"):
         return all(self[res] <= other[res] for res in other.resources)
+    
+    def __lt__(self, other: "Currency"):
+        return all(self[res] < other[res] for res in other.resources)
 
     def __eq__(self, other: "Currency"):
         return self.resources == other.resources
     
     def __str__(self):
-        return ", ".join(f"{k.capitalize()}: {v}" for k, v in self.resources.items())
+        return ", ".join(f"{k.capitalize()}: {v:.0f}" for k, v in self.resources.items())
+    
+    def short_string(self):
+        return ', '.join(f"{k[0].capitalize()}: {v:.0f}" for k, v in self.resources.items())
 
 @dataclass
 class Cost(Currency):

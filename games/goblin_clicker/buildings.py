@@ -1,81 +1,111 @@
-from abc import ABC, abstractmethod
-from dataclasses import dataclass
+from games.goblin_clicker.currency import Cost, CurrencyType, Currency, NotEnoughCurrencyError
+from games.goblin_clicker.common import GROWTH_RATE
 
-from games.goblin_clicker.common import GROWTH_RATE, ALHPA
+class Building:
+    def __init__(
+        self, base_build_cost: Cost, base_production: Currency, level: int = 1
+    ):
+        self.base_build_cost = base_build_cost
+        self.base_production = base_production
 
-@dataclass
-class Building(ABC):
-    base_cost: int
-    level: int = 1
-    base_production: int = 1
-    max_level: int = 100
+        self.level = level
 
-    on_upgrade: callable = None
+        self._cached_cost_to_upgrade: Currency = None
+        self._cached_production_per_tick: Currency = None
 
-    _production_per_tick: int = None
-    _cost_to_upgrade: int = None
+        self.max_level = 100
+
+    @property
+    def efficiency(self) -> float:
+        # eventually this will reflect how many "workers" are occupying the building. If a gold mine can house 5 goblins but only 3 are working it, its efficiency would be 60% or 0.6
+        return 1.0
+
+    @property
+    def cost_to_upgrade(self) -> Cost:
+        if not self._cached_cost_to_upgrade:
+            self._cached_cost_to_upgrade = Cost(
+                {
+                    k: v * (GROWTH_RATE**self.level)
+                    for k, v in self.base_build_cost.resources.items()
+                }
+            )
+        return self._cached_cost_to_upgrade
 
     @property
     def production_per_tick(self):
-        if not self._production_per_tick:
-            self._production_per_tick = (
-                self.base_production
-                * (self.level + 1) ** ALHPA
-                * GROWTH_RATE**self.level
+        if not self._cached_production_per_tick:
+            self._cached_production_per_tick = Currency(
+                {
+                    k: v * self.level * self.efficiency
+                    for k, v in self.base_production.resources.items()
+                }
             )
-        return self._production_per_tick
+        return self._cached_production_per_tick
 
-    @property
-    def cost_to_upgrade(self):
-        if not self._cost_to_upgrade:
-            self._cost_to_upgrade = self.base_cost * GROWTH_RATE**self.level
-        return self._cost_to_upgrade
-    
-    @abstractmethod
-    def tick(self, qty: int = 1):
-        raise NotImplementedError(self.__name__)
+    def can_upgrade(self):
+        return self.level + 1 <= self.max_level
 
-    def upgrade(self):
-        if self.level + 1 >= self.max_level:
-            print(f"Gold Vault has reached max level of {self.max_level}")
-            return
-        
+    def upgrade(self, purchaser: Currency):
+        if purchaser < self.cost_to_upgrade:
+            raise NotEnoughCurrencyError()
+
+        purchaser -= self.cost_to_upgrade
+
         self.level += 1
-        self._production_per_tick = None
-        self._cost_to_upgrade = None
 
-        if self.on_upgrade is not None:
-            self.on_upgrade(self)
+        self._cached_cost_to_upgrade = None
+        self._cached_production_per_tick = None
 
-@dataclass
-class GoldVault(Building):
-    base_cost: int = 10
+    def __str__(self):
+        s = f"{self.__class__.__name__} [Level - {self.level}]"
+        if self.production_per_tick:
+            s += f" [Rate of Production - {self.production_per_tick}]"
+        if self.can_upgrade():
+            s += f" [Upgrade Cost - {self.cost_to_upgrade}]"
+
+        return s
+    
+    def short_string(self):
+        if self.can_upgrade():
+            prefix = "(Upgradeable) "
+        elif self.level == self.max_level:
+            prefix = "(Max) "
+        else:
+            prefix = ""
+        return f"{prefix}[Lvl: {self.level}, P: {self.production_per_tick.short_string()}, Next Lvl: {self.cost_to_upgrade.short_string()}]"
 
 
-@dataclass
-class Lumbermill(Building):
-    base_cost: int = 5
+class GoldMine(Building):
+    def __init__(self, level: int = 1):
+        super().__init__(
+            base_build_cost=Cost({CurrencyType.GOLD: 10, CurrencyType.LUMBER: 15}),
+            base_production=Currency({CurrencyType.GOLD: 1}),
+            level=level,
+        )
 
-@dataclass
+
+class LumberMill(Building):
+    def __init__(self, level: int = 1):
+        super().__init__(
+            base_build_cost=Cost({CurrencyType.GOLD: 5, CurrencyType.LUMBER: 15}),
+            base_production=Currency({CurrencyType.LUMBER: 1}),
+            level=level,
+        )
+
+
 class Farm(Building):
-    base_cost: int = 5
+    def __init__(self, level: int = 1):
+        super().__init__(
+            base_build_cost=Cost({CurrencyType.GOLD: 5, CurrencyType.LUMBER: 5}),
+            base_production=Currency({CurrencyType.FOOD: 3}),
+            level=level,
+        )
 
-@dataclass
+
 class House(Building):
-    base_cost: int = 5
-    on_upgrade: callable
-    _goblins_housed: int = None
-
-    @property
-    def goblins_housed(self):
-        if not self._goblins_housed:
-            self._goblins_housed = (
-                self.base_production
-                * (self.level + 1) ** ALHPA
-                * GROWTH_RATE**self.level
-            )
-        return self._goblins_housed
-
-    def upgrade(self):
-        self._goblins_housed = None
-        super().upgrade()
+    def __init__(self, level: int = 1):
+        super().__init__(
+            base_build_cost=Cost({CurrencyType.GOLD: 10, CurrencyType.LUMBER: 10}),
+            base_production=None,
+            level=level,
+        )
