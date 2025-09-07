@@ -9,6 +9,7 @@ class CurrencyType:
     FOOD: str = "food"
     GOLD: str = "gold"
     LUMBER: str = "lumber"
+    GOBLINS: str = "goblins"
 
 @dataclass
 class Currency:
@@ -17,23 +18,22 @@ class Currency:
     def __getitem__(self, key):
         return self.resources.get(key, 0)
 
-    def __add__(self, other: "Currency"):
-        return Currency({
-            res: self[res] + other[res]
-            for res in set(self.resources) | set(other.resources)
-        })
+    def __iadd__(self, other: "Currency"):
+        for k, v in other.resources.items():
+            self.resources[k] = self.resources.get(k, 0) + v
+        return self
 
-    def __sub__(self, other: "Currency"):
-        return Currency({
-            res: self[res] - other[res]
-            for res in set(self.resources) | set(other.resources)
-        })
+    def __isub__(self, other: "Currency"):
+        """In-place subtraction (-=)"""
+        for k, v in other.resources.items():
+            self.resources[k] = self.resources.get(k, 0) - v
+        return self
 
     def __ge__(self, other: "Currency"):
-        return all(self[res] >= other[res] for res in other.resources)
+        return any(self[res] >= other[res] for res in other.resources)
     
     def __gt__(self, other: "Currency"):
-        return all(self[res] > other[res] for res in other.resources)
+        return any(self[res] > other[res] for res in other.resources)
 
     def __le__(self, other: "Currency"):
         return all(self[res] <= other[res] for res in other.resources)
@@ -54,6 +54,3 @@ class Currency:
 class Cost(Currency):
     def set_cost(self, cost: Dict[CurrencyType, int]):
         self.resources = cost
-
-    def can_buy(self, money: Currency):
-        return money >= self

@@ -1,6 +1,6 @@
 from typing import List
 
-from games.goblin_clicker.buildings import Building, GoldMine, LumberMill, Farm
+from games.goblin_clicker.buildings import ProductionBuilding, GoldMine, LumberMill, Farm, GoldVault, Lumberyard, GrainSilo, House
 from games.goblin_clicker.currency import Currency, CurrencyType
 
 class Player:
@@ -8,16 +8,17 @@ class Player:
         self.username = username
         self.goblins = 2
 
-        self.buildings: List[Building] = [
+        self.buildings: List[ProductionBuilding] = [
             GoldMine(),
             LumberMill(),
-            Farm()
+            Farm(),
         ]
 
         self.currency = Currency({
             CurrencyType.GOLD: 0,
             CurrencyType.LUMBER: 0,
-            CurrencyType.FOOD: 0
+            CurrencyType.FOOD: 0,
+            CurrencyType.GOBLINS: 2
         })
 
     def get_building_by_name(self, building_name: str):

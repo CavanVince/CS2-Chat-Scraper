@@ -32,6 +32,7 @@ class Fortune:
 
 class FortuneCookie(Game):
     def __init__(self):
+        
         self.lessons = []
         with open(LESSONS_FILEPATH, "r", encoding="utf-8") as fp:
             lesson = None

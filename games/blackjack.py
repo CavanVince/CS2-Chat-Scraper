@@ -120,6 +120,7 @@ class GameState(int, Enum):
 
 class Blackjack(Game):
     def __init__(self, min_bet: int = 5, max_bet: int = 50):
+
         self.players: List[Player] = set()
         self.game_state = GameState.OUT_OF_GAME
 

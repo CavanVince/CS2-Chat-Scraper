@@ -48,6 +48,7 @@ class Player:
 
 class CaseGame(Game):
     def __init__(self):
+
         self.players: Dict[Player] = {}
 
     async def run(self):

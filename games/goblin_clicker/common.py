@@ -5,5 +5,4 @@ CURRENT_DIR = os.path.dirname(__file__)
 RES_DIR = os.path.join(CURRENT_DIR, "res")
 SAVE_INTERVAL = timedelta(seconds=180)
 
-GROWTH_RATE: float = 1.07
-ALHPA = 0.6
+GROWTH_RATE: float = 1.2

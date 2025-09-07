@@ -3,7 +3,16 @@ from typing import Any, Dict, Type
 
 from games.goblin_clicker.player import Player
 from games.goblin_clicker.currency import Currency, CurrencyType
-from games.goblin_clicker.buildings import Building, GoldMine, LumberMill, Farm, House
+from games.goblin_clicker.buildings import (
+    Building,
+    GoldMine,
+    LumberMill,
+    Farm,
+    House,
+    GoldVault,
+    Lumberyard,
+    GrainSilo,
+)
 
 
 class GameEncoder(json.JSONEncoder):
@@ -41,18 +50,29 @@ def game_object_hook(d: Dict[str, Any]) -> Any:
         p = Player(d["username"])
         p.goblins = d["goblins"]
         p.currency = d["currency"]  # object_hook handles nested Currency
-        p.buildings = d["buildings"]  # object_hook handles nested Buildings
+        p.buildings = d["buildings"]  # object_hook handles nested ProductionBuildings
         return p
 
     elif t == "Currency":
         return Currency(d["resources"])
 
-    elif t in {"GoldMine", "LumberMill", "Farm", "House"}:
+    elif t in {
+        "GoldMine",
+        "LumberMill",
+        "Farm",
+        "House",
+        "GoldVault",
+        "Lumberyard",
+        "GrainSilo",
+    }:
         cls: Type[Building] = {
             "GoldMine": GoldMine,
             "LumberMill": LumberMill,
             "Farm": Farm,
             "House": House,
+            "GoldVault": GoldVault,
+            "Lumberyard": Lumberyard,
+            "GrainSilo": GrainSilo,
         }[t]
         return cls(
             level=d["level"],
